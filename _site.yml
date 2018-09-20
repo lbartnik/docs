@@ -5,8 +5,8 @@ description: |
 output_dir: "_site"
 navbar:
   right:
-    - text: "Home"
-      href: index.html
+    - text: "Introduction"
+      href: introduction.html
     - text: "Completeness"
       href: completeness.html
 output: radix::radix_article
