@@ -1,0 +1,15 @@
+---
+title: "History of Objects"
+description: |
+  History of objects for R
+site: radix::radix_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Radix at:
+# https://rstudio.github.io/radix/website.html
+
+```
+

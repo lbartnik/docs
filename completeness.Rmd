@@ -1,0 +1,10 @@
+---
+title: "Implementation Completeness Status"
+description: |
+  List of features, planned and completed
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
