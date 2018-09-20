@@ -2,6 +2,7 @@
 title: "Implementation Completeness Status"
 description: |
   List of features, planned and completed
+site: radix::radix_website
 ---
 
 ```{r setup, include=FALSE}
