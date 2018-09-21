@@ -9,13 +9,31 @@ site: radix::radix_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Vision
+# Abstract
+
+History of Objects provides means to track and explain the origin of any
+data files and plots created in R. Thus, research reproducibility can be
+maintained even when the code which created a given artifact is lost.
+
+Two components are at the centers of History of Objects. The first is the
+artifact repository which tracks and stores artifacts created in R: plots,
+data sets, various R objects (models), printous, together with their
+ancestry graph. The other is the file browser which can identify file by
+its type, extract the relevant artifact data, search repository for a
+matching artifact and provide means to browse the search results.
+
+History of Objects is designed with two assumptions: that filesystem is
+the most convenient way to store and organize artifacts of data analysis,
+and that research is documented (even in its reproducible form, for
+example RMarkdown) once certain part of analysis is done, thus leaving
+margin for errors and omissions.
+
+# Object Identity
 
 The command history which R stores, compounded with RStudio's ability to select and run blocks of R code, greatly simplifies interactions with the R console. History can be explored which helps with recall. However, because data and functions are not stored, its insight is limited.
 
 What if there was a way to store each and every object that is even briefly stored in R session? What would be the new use cases for such a binary history of R session? What kind of interactions with R could be improved?
 
-## Object Identity
 
 Imagine a simple data analysis project in R. In the file system, there is a bunch of directories and files: plots, data sets, binary data files (serialized R objects), R scripts (code) and maybe a RMarkdown document if there is some focus on research reproducibility. Now, imagine that one of these plot cannot be reproduced: in the course of the project the code got overwritten and the plots is all that there is.
 
