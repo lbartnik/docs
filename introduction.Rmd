@@ -1,0 +1,39 @@
+---
+title: "History of Objects"
+description: |
+  History of objects for R
+site: radix::radix_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Vision
+
+The command history which R stores, compounded with RStudio's ability to select and run blocks of R code, greatly simplifies interactions with the R console. History can be explored which helps with recall. However, because data and functions are not stored, its insight is limited.
+
+What if there was a way to store each and every object that is even briefly stored in R session? What would be the new use cases for such a binary history of R session? What kind of interactions with R could be improved?
+
+## Object Identity
+
+Imagine a simple data analysis project in R. In the file system, there is a bunch of directories and files: plots, data sets, binary data files (serialized R objects), R scripts (code) and maybe a RMarkdown document if there is some focus on research reproducibility. Now, imagine that one of these plot cannot be reproduced: in the course of the project the code got overwritten and the plots is all that there is.
+
+If reproducing the plot is crucial we might choose to spend a few hours (a day?) on recreating the reasoning and code that led to said plot. But what if all it takes is this?
+
+identify("attempt-2/residuals.png")
+#> Found artifact: c6a712bf
+#> Command:        plot(data$time, data$residuals, pch=".")
+#> Time:           2017-12-04 12:37
+From here we can do a lot. We can check the longer sequence of commands:
+
+x <- identify("attempt-2/residuals.png")
+#> Found artifact: c6a712bf
+explain(x, length = 7)
+#> 5: x <- read_csv("data.csv") %>% mutate(time = as.POSIXct(tm))
+#> 4: data <- group_by(x, hour(time)) %>% summarize(value = sum(value))
+#> 3: m <- lm(value  time, data)
+#> 2: data$residuals <- residuals(m)
+#> 1: plot(data$time, data$residuals, pch=".")
+
+# Technology

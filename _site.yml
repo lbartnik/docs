@@ -1,0 +1,12 @@
+name: "repo-docs"
+title: "History of Objects"
+description: |
+  History of Objects
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Introduction"
+      href: introduction.html
+    - text: "Completeness"
+      href: completeness.html
+output: radix::radix_article

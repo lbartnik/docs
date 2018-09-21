@@ -1,0 +1,29 @@
+---
+title: "Implementation Completeness Status"
+description: |
+  List of features, planned and completed
+site: radix::radix_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+* Repository
+  * R session tracker
+    * ~~track R objects in global environment~~
+    * ~~track most recent plot~~
+    * track console printouts
+    * track objects/plots created in a loop
+  * Object identification
+    * Identify artifact matching a binary file (RDS, RData)
+    * Identify plot matching a graphic file
+    * Keep track of files in the working directory, store matches in a text file, update upon package load, use OS calls to identify and match new files in a background thread
+  * Browser
+    * Origin tree
+    * Show artifacts
+    * Use keyboard to navigate
+    * Retrieve selected artifact(s)
+    * Collapse branches
+  * File system tree
+    * Show file in the current working directory, together with matching their matching artifacts
